@@ -1,4 +1,4 @@
-module github.com/yourusername/context-detector
+module github.com/TechByTom/context-detector
 
 go 1.18
 
