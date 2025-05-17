@@ -9,52 +9,37 @@ These tools are designed for Windows systems and require Windows-specific APIs. 
 - **Visual Studio**: For the C++ implementation (Visual Studio 2019+ recommended)
 - **.NET SDK**: For the C# implementation (.NET Framework or .NET Core)
 
-## Build Options
+## Build Instructions
 
-### Option 1: Using batch files (Recommended)
-
-Run each batch file from a Command Prompt or PowerShell window:
-
-1. **Go implementation**:
-   ```
-   build_go.bat
-   ```
-
-2. **C++ implementation**:
-   ```
-   compile.bat
-   ```
-   *Note: Run this from a Visual Studio Developer Command Prompt*
-
-3. **C# implementation**:
-   ```
-   edr_test_build.bat
-   ```
-
-### Option 2: Using the combined script
-
-If you have WSL (Windows Subsystem for Linux), you can use the combined script:
-
+### Go implementation
+Run from Command Prompt or PowerShell:
 ```
-bash build_all.sh
+build_go.bat
 ```
 
-This script attempts to use Windows compilers from WSL to build all implementations.
-
-### Option 3: Manual build commands
-
-#### Go implementation
+Or manually:
 ```
 go build -o ContextTechniques.exe context_techniques.go
 ```
 
-#### C++ implementation
-From a Visual Studio Developer Command Prompt:
+### C++ implementation
+Run from a Visual Studio Developer Command Prompt:
+```
+compile.bat
+```
+
+Or manually:
 ```
 cl.exe /EHsc /W4 /Fe:ContextOnlyTechniques.exe ContextOnlyTechniques.cpp /link advapi32.lib dbghelp.lib psapi.lib
 ```
 
-#### C# implementation
+### C# implementation
+Run from Command Prompt or PowerShell:
+```
+edr_test_build.bat
+```
+
+Or manually:
 ```
 csc.exe /unsafe /out:ContextInjection_EDR_Test.exe ContextInjection_EDR_Test.cs
 ```
